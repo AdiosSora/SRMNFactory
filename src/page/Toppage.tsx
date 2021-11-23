@@ -1,27 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../App.css';
 import MainLogoimg from '../img/srmn_factory_logo.png';
 import SyoSystemLogoimg from '../img/syo_system_logo.png';
 import ComingSoonLogo from '../img/coming_soon_logo.png';
-import Box, { BoxProps } from '@mui/material/Box';
+import Box from '@mui/material/Box';
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import { Path } from "./../Router";
 
-function App() {
+const TopPage = (): JSX.Element => {
   return (
     <div className="App">
-      <Box
-        sx={{
-          width: '100%',
-          height: '140px',
-          color: '#fff',
-          '& > .MuiBox-root > .MuiBox-root': {
-            p: 1,
-            borderRadius: 1,
-          },
-        }}
-      >
+      <Box>
         <Box
           sx={{
-            display: 'grid',
             gap: 1,
             gridTemplateRows: 'auto',
             gridTemplateAreas: `"header   "
@@ -40,7 +32,11 @@ function App() {
             <p>
               選択してください。
             </p>
-            <Box className="Service_Box">
+            <Box 
+              className="Service_Box"
+              component={Link}
+              to={Path.SyoTopPage}
+            >
               <img
               src={SyoSystemLogoimg}
               className="Service_Logo"
@@ -53,12 +49,9 @@ function App() {
               alt="logo" />
             </Box>
           </Box>
-          <Box sx={{ gridArea: 'footer', bgcolor: 'warning.main' }} className="Footer">
-            Footer
-          </Box>
         </Box>
       </Box>
     </div>
   );
 }
-export default App;
+export default TopPage;

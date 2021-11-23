@@ -29,7 +29,8 @@
     .Footer{
       position: absolute;
       bottom: 0;
-      width: 100vw;
+      left : 10vw;
+      width: 80vw;
     }
 
   }
