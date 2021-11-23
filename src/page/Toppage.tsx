@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import MainLogoimg from '../img/srmn_factory_logo.png';
 import SyoSystemLogoimg from '../img/syo_system_logo.png';
@@ -9,6 +9,12 @@ import { Link } from "react-router-dom";
 import { Path } from "./../Router";
 
 const TopPage = (): JSX.Element => {
+    
+  useEffect(() => {
+      let title = 'しょーシステム - そらまん工房'
+      document.title = title;
+    });
+
   return (
     <div className="App">
       <Box>
@@ -21,14 +27,14 @@ const TopPage = (): JSX.Element => {
           "footer"`,
           }}
         >
-          <Box sx={{ gridArea: 'header', bgcolor: '#000000' }}>
+          <Box sx={{ gridArea: 'header'}}>
             <img
               src={MainLogoimg}
               className="Main_Logo"
               alt="logo"
             />
           </Box>
-          <Box sx={{ gridArea: 'main', bgcolor: '#000000' }}>
+          <Box sx={{ gridArea: 'main'}}>
             <p>
               選択してください。
             </p>
